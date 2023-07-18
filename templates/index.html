@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}Index page{% endblock %}
+{% block content %}
+  <div class="container">
+    {% if session.user_id %}
+    <form>
+      <div>
+        <h2 >Welcome to Bear@Store</h2>
+        <div class="mt-6 border-t border-gray-100">
+          <p class="mt-1 max-w-2xl  leading-6 text-gray-500">Personal details</p>
+          <dl class="divide-y divide-gray-100">
+            <div class="px-4 py-6  ">
+              <dt class=" font-medium leading-6 text-gray-900">Username</dt>
+              <dd class="mt-1  leading-6 text-gray-700 ">{{ session.username }}</dd>
+            </div>
+            <div class="px-4 py-6  ">
+              <dt class=" font-medium leading-6 text-gray-900">Role</dt>
+              <dd class="mt-1  leading-6 text-gray-700 ">{{ session.role }}</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </form>
+      
+    {% else %}
+      
+      <p class="text-center">Please log in or create an account.</p>
+      <div class="row">
+        <div>
+          
+          <form method="post" action="{{ url_for('login') }}">
+            <h2>Log In</h2>
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <p style="margin-bottom:30px;"><a href="{{ url_for('signup') }}">No account, Sign Up here</a></p>
+            <button type="submit" style="float:right;margin-bottom: 20px;">Log In</button>
+          </form>
+        </div>
+        
+          
+         
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

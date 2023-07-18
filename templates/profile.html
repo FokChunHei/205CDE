@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+ 
+
+{% block content %}
+<p class="text-center">Welcome, {{ session.username }}!</p>
+<div class="row">
+    <div>
+    <form >
+        <h2>Profile</h2>
+        <p>Thanks for using our service since {{ user[2] }}!</p>
+        <div class="form-group">
+        <label for="username">Your Username: {{session.username}}</label>
+        </div>
+        <div class="form-group">
+        <label for="password">Your Role: {{session.role}}</label>
+        </div>
+    </form>
+    </div>
+    </div>
+</div>
+{% endblock %}

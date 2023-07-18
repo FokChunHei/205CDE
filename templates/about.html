@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+ 
+{% block title %}about page{% endblock %}
+
+{% block content %}
+<form>
+    <h2>About/Contact Us</h2>
+    <p>Here is simple online store.</p>
+<br>
+<div class="account">
+    <h4 style="text-align: left;">Predefined account information:</h4>
+    <p>account/ password</p>
+    <h4 style="text-align: left;">Admin role account:</h4>
+
+    <p>admin/admin</p>
+    <h4 style="text-align: left;">Customer role accounts:</h4>
+    <p>user1/user1, user2/user2 ,user3/user3, user4/user4, amy/amy</p>
+</div>
+
+<br>
+<div class="function">
+    <h4 style="text-align: left;">Functions:</h4>
+    <ul style="text-align: left;margin-left: 30px;">
+        <li>1. User can register and login.</li>
+        <li>2. The password is hashed</li>
+        <li>3. Admin can view users shopping history.</li>
+        <li>4. Admin can add/update products</li>
+        <li>5. Admin can delete products that has not been bought.</li>
+        <li>6. Users can view profile information.</li>
+        <li>7. Users can view products information and add to cart.</li>
+    </ul>
+</div>
+</form>
+{% endblock %}
